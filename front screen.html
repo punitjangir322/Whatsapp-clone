@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title>WhatsApp Mobile Only</title>
+
+    <style>
+        body {
+            margin: 0;
+            display: none;
+        }
+        
+        @media (max-width: 500px) {
+            body {
+                display: block;
+                font-family: Arial, sans-serif;
+                background: black;
+                color: white;
+            }
+            .container {
+                padding-top: 140px;
+                /* header + search space */
+                padding-bottom: 90px;
+                /* footer space */
+            }
+            /* HEADER */
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 16px;
+                background: black;
+                display: flex;
+                justify-content: space-between;
+                z-index: 1000;
+            }
+            h1 {
+                font-size: 20px;
+                margin: 0;
+            }
+            .icons i {
+                font-size: 20px;
+                margin-right: 30px;
+            }
+            /* SEARCH */
+            .search-box {
+                position: fixed;
+                top: 50px;
+                width: 100%;
+                background: black;
+                padding: 10px;
+                z-index: 999;
+            }
+            .search-box input {
+                width: 90%;
+                padding: 10px;
+                border-radius: 30px;
+                background: transparent;
+                color: white;
+                border: 1px solid #444;
+                font-size: 16px;
+            }
+            /* NAV */
+            .all-msg-nav {
+                display: flex;
+                justify-content: space-evenly;
+                margin: 10px 0;
+            }
+            .all-msg-nav a {
+                padding: 5px 10px;
+                color: white;
+                text-decoration: none;
+                border: 2px solid #444;
+                border-radius: 12px;
+                font-size: 12px;
+            }
+            /* CHATS */
+            .chat1 {
+                display: flex;
+                padding: 10px;
+                border-bottom: 1px solid #333;
+            }
+            .dp {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 2px solid white;
+                margin-right: 10px;
+                background-image: url(images/person1.jpg);
+                background-size: cover;
+            }
+            .content h1 {
+                font-size: 16px;
+                margin: 0;
+            }
+            .content p {
+                font-size: 14px;
+                color: #ccc;
+                margin: 0;
+            }
+            /* FOOTER */
+            .footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: black;
+                display: flex;
+                justify-content: space-evenly;
+                padding: 10px 0;
+                border-top: 1px solid #444;
+            }
+            .footer a {
+                color: white;
+                text-decoration: none;
+                text-align: center;
+                font-size: 12px;
+            }
+            .footer i {
+                display: block;
+                font-size: 20px;
+                margin-bottom: 4px;
+            }
+            .chat-link {
+                text-decoration: none;
+                color: inherit;
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>WhatsApp</h1>
+        <div class="icons">
+            <i class="fa-solid fa-qrcode"></i>
+            <i class="fa-solid fa-camera"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+    </div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Ask Meta AI or Search">
+    </div>
+
+    <div class="container">
+
+        <div class="all-msg-nav">
+            <a href="#">All</a>
+            <a href="#">Unread</a>
+            <a href="#">Favourites</a>
+            <a href="#">Groups</a>
+            <a href="#">+</a>
+        </div>
+
+        <!-- Chats -->
+        <a href="chat.html" class="chat-link">
+            <div class="chat1" data-type="unread">
+                <div class="dp"></div>
+                <div class="content">
+                    <h1>Aman Yadav</h1>
+                    <p>Hello</p>
+                </div>
+            </div>
+        </a>
+
+        <div class="chat1" data-type="unread">
+            <div class="dp"></div>
+            <div class="content">
+                <h1>Sakshi Verma</h1>
+                <p>Hello</p>
+            </div>
+        </div>
+        <div class="chat1" data-type="favourites">
+            <div class="dp"></div>
+            <div class="content">
+                <h1>Rahul Sharma</h1>
+                <p>Hello</p>
+            </div>
+        </div>
+        <div class="chat1" data-type="favourites">
+            <div class="dp"></div>
+            <div class="content">
+                <h1>Yash Mehta</h1>
+                <p>Hello</p>
+            </div>
+        </div>
+        <div class="chat1" data-type="groups">
+            <div class="dp"></div>
+            <div class="content">
+                <h1>Ajay Mehta</h1>
+                <p>Hello</p>
+            </div>
+        </div>
+        <div class="chat1" data-type="groups">
+            <div class="dp"></div>
+            <div class="content">
+                <h1>Yash Mehta</h1>
+                <p>Hello</p>
+            </div>
+        </div>
+        <div class="chat1">
+            <div class="dp"></div>
+            <div class="content">
+                <h1>Yash Mehta</h1>
+                <p>Hello</p>
+            </div>
+        </div>
+        <div class="chat1">
+            <div class="dp"></div>
+            <div class="content">
+                <h1>Yash Mehta</h1>
+                <p>Hello</p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+        <a href="#"><i class="fa-solid fa-comment-dots" onclick="filterChats('all')"></i>Chats</a>
+        <a href="#"><i class="fa-regular fa-circle-dot"></i>Updates</a>
+        <a href="#"><i class="fa-solid fa-users"></i>Communities</a>
+        <a href="#"><i class="fa-solid fa-phone"></i>Calls</a>
+    </div>
+
+</body>
+<script>
+    const chats = document.querySelectorAll(".chat1");
+    const navLinks = document.querySelectorAll(".all-msg-nav a");
+    const searchInput = document.querySelector(".search-box input")
+
+    function filterChats(type) {
+        chats.forEach(chat => {
+            const chatType = chat.dataset.type;
+            chat.style.display =
+                type === "all" || chatType === type ? "flex" : "none";
+        });
+    }
+
+    function setActiveTab(activeLink) {
+        navLinks.forEach(link => link.classList.remove("active"));
+        activeLink.classList.add("active");
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", e => {
+            e.preventDefault();
+            const type = link.textContent.toLowerCase();
+            setActiveTab(link);
+            filterChats(type);
+        });
+    });
+
+    // default
+    filterChats("all");
+
+    // search
+    searchInput.addEventListener("keyup", function() {
+        const value = this.value.toLowerCase();
+        chats.forEach(chat => {
+            const name = chat.querySelector(".content h1").textContent.toLowerCase();
+            chat.style.display = name.includes(value) ? "flex" : "none";
+        });
+    });
+</script>
+
+</html>
