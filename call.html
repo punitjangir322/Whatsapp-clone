@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Calls UI</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background: #0b141a;
+            color: #fff;
+            max-width: 420px;
+            margin: auto;
+        }
+        /* HEADER */
+        
+        .header {
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header h1 {
+            font-size: 22px;
+        }
+        
+        .header i {
+            font-size: 18px;
+            margin-left: 18px;
+            color: #cfd8dc;
+        }
+        /* TOP ACTIONS */
+        
+        .actions {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0 20px;
+        }
+        
+        .action-btn {
+            text-align: center;
+        }
+        
+        .action-btn div {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #1f2c34;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+        
+        .action-btn i {
+            font-size: 20px;
+        }
+        
+        .action-btn span {
+            display: block;
+            margin-top: 6px;
+            font-size: 12px;
+            color: #9fb0b8;
+        }
+        /* RECENT */
+        
+        .section-title {
+            padding: 0 16px;
+            font-size: 14px;
+            color: #9fb0b8;
+            margin-bottom: 8px;
+        }
+        /* CALL LIST */
+        
+        .call {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+        }
+        
+        .call:hover {
+            background: #111f26;
+        }
+        
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #2a3942;
+            margin-right: 12px;
+            overflow: hidden;
+        }
+        
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .call-info {
+            flex: 1;
+        }
+        
+        .call-info h3 {
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        .call-info p {
+            font-size: 13px;
+            margin-top: 3px;
+            color: #9fb0b8;
+        }
+        
+        .call-info .out {
+            color: #25d366;
+        }
+        
+        .call-info .in {
+            color: #f15c6d;
+        }
+        
+        .call i {
+            font-size: 18px;
+            color: #25d366;
+        }
+        /* FLOATING BUTTON */
+        
+        .fab {
+            position: fixed;
+            bottom: 80px;
+            right: calc(50% - 190px);
+            background: #25d366;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 22px;
+        }
+        /* BOTTOM NAV */
+        
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: black;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px 0;
+            border-top: 1px solid #444;
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .footer i {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+        
+        .chat-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Calls</h1>
+        <div>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="actions">
+        <div class="action-btn">
+            <div><i class="fa-solid fa-phone"></i></div>
+            <span>Call</span>
+        </div>
+        <div class="action-btn">
+            <div><i class="fa-solid fa-calendar"></i></div>
+            <span>Schedule</span>
+        </div>
+        <div class="action-btn">
+            <div><i class="fa-solid fa-keyboard"></i></div>
+            <span>Keypad</span>
+        </div>
+        <div class="action-btn">
+            <div><i class="fa-solid fa-user-group"></i></div>
+            <span>Spookies</span>
+        </div>
+    </div>
+
+    <div class="section-title">Recent</div>
+
+    <!-- CALL ITEMS -->
+    <div class="call">
+        <div class="avatar"><img src="https://i.pravatar.cc/100?img=32"></div>
+        <div class="call-info">
+            <h3>Priyanka & Suman Frd 😊🥰</h3>
+            <p class="out"><i class="fa-solid fa-arrow-up"></i> Today, 13:34</p>
+        </div>
+        <i class="fa-solid fa-video"></i>
+    </div>
+
+    <div class="call">
+        <div class="avatar"><img src="https://i.pravatar.cc/100?img=47"></div>
+        <div class="call-info">
+            <h3>Priyanka</h3>
+            <p class="in"><i class="fa-solid fa-arrow-down"></i> Today, 13:32</p>
+        </div>
+        <i class="fa-solid fa-video"></i>
+    </div>
+
+    <div class="call">
+        <div class="avatar"><img src="https://i.pravatar.cc/100?img=12"></div>
+        <div class="call-info">
+            <h3>+91 63784 09986 (2)</h3>
+            <p class="out"><i class="fa-solid fa-arrow-up"></i> Today, 12:19</p>
+        </div>
+        <i class="fa-solid fa-phone"></i>
+    </div>
+    <div class="call">
+        <div class="avatar"><img src="https://i.pravatar.cc/100?img=12"></div>
+        <div class="call-info">
+            <h3>+91 63784 09986 (2)</h3>
+            <p class="out"><i class="fa-solid fa-arrow-up"></i> Today, 12:19</p>
+        </div>
+        <i class="fa-solid fa-phone"></i>
+    </div>
+    <div class="call">
+        <div class="avatar"><img src="https://i.pravatar.cc/100?img=12"></div>
+        <div class="call-info">
+            <h3>+91 63784 09986 (2)</h3>
+            <p class="out"><i class="fa-solid fa-arrow-up"></i> Today, 12:19</p>
+        </div>
+        <i class="fa-solid fa-phone"></i>
+    </div>
+    <div class="call">
+        <div class="avatar"><img src="https://i.pravatar.cc/100?img=12"></div>
+        <div class="call-info">
+            <h3>+91 63784 09986 (2)</h3>
+            <p class="out"><i class="fa-solid fa-arrow-up"></i> Today, 12:19</p>
+        </div>
+        <i class="fa-solid fa-phone"></i>
+    </div>
+    <div class="call">
+        <div class="avatar"><img src="https://i.pravatar.cc/100?img=12"></div>
+        <div class="call-info">
+            <h3>+91 63784 09986 (2)</h3>
+            <p class="out"><i class="fa-solid fa-arrow-up"></i> Today, 12:19</p>
+        </div>
+        <i class="fa-solid fa-phone"></i>
+    </div>
+    <div class="call">
+        <div class="avatar"><img src="https://i.pravatar.cc/100?img=12"></div>
+        <div class="call-info">
+            <h3>+91 63784 09986 (2)</h3>
+            <p class="out"><i class="fa-solid fa-arrow-up"></i> Today, 12:19</p>
+        </div>
+        <i class="fa-solid fa-phone"></i>
+    </div>
+    <div class="call">
+        <div class="avatar"><img src="https://i.pravatar.cc/100?img=12"></div>
+        <div class="call-info">
+            <h3>+91 63784 09986 (2)</h3>
+            <p class="out"><i class="fa-solid fa-arrow-up"></i> Today, 12:19</p>
+        </div>
+        <i class="fa-solid fa-phone"></i>
+    </div>
+    <div class="call">
+        <div class="avatar"><img src="https://i.pravatar.cc/100?img=12"></div>
+        <div class="call-info">
+            <h3>+91 63784 09986 (2)</h3>
+            <p class="out"><i class="fa-solid fa-arrow-up"></i> Today, 12:19</p>
+        </div>
+        <i class="fa-solid fa-phone"></i>
+    </div>
+    <div class="call">
+        <div class="avatar"><img src="https://i.pravatar.cc/100?img=12"></div>
+        <div class="call-info">
+            <h3>+91 63784 09986 (2)</h3>
+            <p class="out"><i class="fa-solid fa-arrow-up"></i> Today, 12:19</p>
+        </div>
+        <i class="fa-solid fa-phone"></i>
+    </div>
+    <div class="call">
+        <div class="avatar"><img src="https://i.pravatar.cc/100?img=12"></div>
+        <div class="call-info">
+            <h3>+91 63784 09986 (2)</h3>
+            <p class="out"><i class="fa-solid fa-arrow-up"></i> Today, 12:19</p>
+        </div>
+        <i class="fa-solid fa-phone"></i>
+    </div>
+
+
+    <!-- FLOATING BUTTON -->
+    <div class="fab">
+        <i class="fa-solid fa-phone"></i>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <div class="footer">
+        <a href="front screen.html"><i class="fa-solid fa-comment-dots"></i>Chats</a>
+        <a href="status.html"><i class="fa-regular fa-circle-dot"></i>Updates</a>
+        <a href="communities.html"><i class="fa-solid fa-users"></i>Communities</a>
+        <a href="#"><i class="fa-solid fa-phone"></i>Calls</a>
+    </div>
+
+</body>
+
+</html>
