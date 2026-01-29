@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Updates</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont;
+        }
+        
+        body {
+            background: #0b141a;
+            color: #fff;
+        }
+        /* HEADER */
+        
+        .header {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: 500;
+        }
+        
+        .header i {
+            font-size: 20px;
+            margin-left: 18px;
+        }
+        /* STATUS SECTION */
+        
+        .section {
+            padding: 10px 0;
+        }
+        
+        .section-title {
+            padding: 0 15px 10px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        
+        .status-list {
+            display: flex;
+            gap: 15px;
+            padding: 0 15px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        
+        .status {
+            width: 90px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+        
+        .status .box {
+            width: 90px;
+            height: 130px;
+            border-radius: 18px;
+            background: #1f2c34;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .status.add .box {
+            background: #121b22;
+        }
+        
+        .status img {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 2px solid #25d366;
+            position: absolute;
+            top: 8px;
+            left: 8px;
+        }
+        
+        .status.add i {
+            font-size: 28px;
+            color: #25d366;
+        }
+        
+        .status p {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #ccc;
+        }
+        /* CHANNELS */
+        
+        .channels-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+        }
+        
+        .channels-header h2 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        
+        .channels-header button {
+            background: #1f2c34;
+            color: #25d366;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        .channel {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+        }
+        
+        .channel img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+        
+        .channel-info {
+            flex: 1;
+        }
+        
+        .channel-info h3 {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .channel-info p {
+            font-size: 13px;
+            color: #aaa;
+            margin-top: 3px;
+        }
+        
+        .channel-meta {
+            text-align: right;
+        }
+        
+        .channel-meta span {
+            font-size: 12px;
+            color: #25d366;
+        }
+        
+        .badge {
+            background: #25d366;
+            color: #000;
+            font-size: 12px;
+            padding: 3px 7px;
+            border-radius: 20px;
+            margin-top: 6px;
+            display: inline-block;
+        }
+        /* FLOAT BUTTON */
+        
+        .camera-btn {
+            position: fixed;
+            right: 18px;
+            bottom: 80px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25d366;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            color: #000;
+        }
+        /* BOTTOM NAV */
+        
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: black;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px 0;
+            border-top: 1px solid #444;
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .footer i {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+        
+        .chat-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Updates</h1>
+        <div>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+    </div>
+
+    <!-- STATUS -->
+    <div class="section">
+        <div class="section-title">Status</div>
+
+        <div class="status-list">
+            <div class="status add">
+                <div class="box">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <p>Add status</p>
+            </div>
+
+            <div class="status">
+                <div class="box">
+                    <img src="https://i.pravatar.cc/100?img=1">
+                </div>
+                <p>Priya</p>
+            </div>
+
+            <div class="status">
+                <div class="box">
+                    <img src="https://i.pravatar.cc/100?img=2">
+                </div>
+                <p>Nitin</p>
+            </div>
+
+            <div class="status">
+                <div class="box">
+                    <img src="https://i.pravatar.cc/100?img=3">
+                </div>
+                <p>Appin</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHANNELS -->
+    <div class="channels-header">
+        <h2>Channels</h2>
+        <button>Explore</button>
+    </div>
+
+    <div class="channel">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/News18_India.png">
+        <div class="channel-info">
+            <h3>News18 India</h3>
+            <p>पंचतत्व में विलीन हुए...</p>
+        </div>
+        <div class="channel-meta">
+            <span>12:18</span>
+            <div class="badge">999+</div>
+        </div>
+    </div>
+
+    <div class="channel">
+        <img src="https://letsupgrade.in/favicon.ico">
+        <div class="channel-info">
+            <h3>LetsUpgrade</h3>
+            <p>⚡ JavaScript Bootcamp</p>
+        </div>
+        <div class="channel-meta">
+            <span>11:08</span>
+            <div class="badge">93</div>
+        </div>
+    </div>
+
+    <!-- CAMERA BUTTON -->
+    <div class="camera-btn">
+        <i class="fa-solid fa-camera"></i>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <div class="footer">
+        <a href="front screen.html"><i class="fa-solid fa-comment-dots"></i>Chats</a>
+        <a href="#"><i class="fa-regular fa-circle-dot"></i>Updates</a>
+        <a href="#"><i class="fa-solid fa-users"></i>Communities</a>
+        <a href="#"><i class="fa-solid fa-phone"></i>Calls</a>
+    </div>
+
+
+</body>
+
+</html>
